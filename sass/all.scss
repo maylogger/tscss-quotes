@@ -1,0 +1,87 @@
+@import "compass";
+@import "mixin";
+@import "normalize";
+
+html {
+  height: 100%;
+}
+body {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  background: white;
+  color: black;
+  font-family: "MStiffHeiHK","lihei pro", sans-serif;
+}
+.intro-wrap {
+  @include opacity(0);
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 1000000;
+  .prepared & {
+    @include opacity(1);
+    @include transition(opacity .8s ease-in);
+    @include transform(translateY(0%));
+  }
+  .start & {
+    @include opacity(1);
+    @include transform(translateY(200%));
+    @include transition(transform 1s);
+  }
+  .intro {
+    @include transform(translateY(-50%));
+    position: relative;
+    top: 50%;
+    width: 80%;
+    max-width: 400px;
+    margin: 0 auto;
+    cursor: pointer;
+    span {
+      outline: 10px solid black;
+      text-align: center;
+    }
+  }
+}
+.sentence1 .item {
+  bottom: 50%;
+}
+.sentence2 .item {
+  top: 50%;
+}
+.bigtext,
+.bigtext-item {
+  font-weight: normal;
+  line-height: 1;
+}
+.sentences {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  left: 0;
+  .item {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    @include transform(scale(0.5));
+    @include transition(transform 0.3s);
+    @include opacity(0);
+    .item-wrap {
+      width: 80%;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 15px;
+      background: white;
+    }
+    &.in {
+      @include transform(scale(1));
+      @include transition(transform .1s);
+      @include opacity(1);
+    }
+  }
+}
