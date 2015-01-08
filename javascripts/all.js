@@ -36,7 +36,7 @@
     window.rand1 = Math.floor(Math.random() * total1);
     window.rand2 = Math.floor(Math.random() * total2);
     $('.sentence1 .item, .sentence2 .item').removeClass('in');
-    flip(10);
+    flip(15);
     return $('body').removeClass('prepared').addClass('start');
   });
 
@@ -47,7 +47,7 @@
       if (--i) {
         return flip(i);
       } else {
-        return flip2(10);
+        return flip2(15);
       }
     }), 80);
   };

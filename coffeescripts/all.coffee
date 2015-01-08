@@ -20,14 +20,14 @@ $('body').click ->
   window.rand1 = Math.floor(Math.random()*(total1))
   window.rand2 = Math.floor(Math.random()*(total2))
   $('.sentence1 .item, .sentence2 .item').removeClass('in')
-  flip(10)
+  flip(15)
   $('body').removeClass('prepared').addClass('start')
 
 flip = (i) ->
   setTimeout (->
     $('.sentence1').find('.item').removeClass('in')
     $('.sentence1').find('.item:eq(' + (window.rand1 - i) + ')').addClass('in')
-    if --i then flip i else flip2(10)
+    if --i then flip i else flip2(15)
   ), 80
 flip2 = (i) ->
   setTimeout (->
