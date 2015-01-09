@@ -1,5 +1,4 @@
 @import "compass";
-@import "mixin";
 @import "normalize";
 
 html {
@@ -37,13 +36,9 @@ body {
     position: relative;
     top: 50%;
     width: 80%;
-    max-width: 400px;
+    max-width: 600px;
     margin: 0 auto;
     cursor: pointer;
-    span {
-      outline: 10px solid black;
-      text-align: center;
-    }
   }
 }
 .sentence1 .item {
@@ -55,7 +50,7 @@ body {
 .bigtext,
 .bigtext-item {
   font-weight: normal;
-  line-height: 1;
+  line-height: 1.2;
 }
 .sentences {
   position: fixed;
@@ -73,7 +68,7 @@ body {
     @include opacity(0);
     .item-wrap {
       width: 80%;
-      max-width: 800px;
+      // max-width: 1200px;
       margin: 0 auto;
       padding: 15px;
       background: white;

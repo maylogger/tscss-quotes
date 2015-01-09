@@ -1,12 +1,11 @@
 (function() {
-  var flip, flip2,
+  var flip, flip2, regen,
     _this = this;
 
   $('.bigtext').bigtext();
 
   Tabletop.init({
     key: 'https://docs.google.com/spreadsheets/d/1C5Sdax2-et0u4-xys6XoFP-vH_gJ6SvtoIFtIQEM4w8/pubhtml',
-    key: 'https://docs.google.com/spreadsheets/d/1v7O_9whMC8qzUrExTVUpmt97N6VsXFMYR-EKrXsXQoQ/pubhtml',
     callback: function(data) {
       var column, el, i, _i, _j, _len, _len1, _ref, _ref1;
 
@@ -22,13 +21,24 @@
         }
       }
       $('.bigtext-item').bigtext({
+        maxfontsize: 100,
         minfontsize: 40
       });
       return $('body').addClass('prepared');
     }
   });
 
-  $('body').click(function() {
+  $('.intro').click(function() {
+    return regen();
+  });
+
+  $(document).keyup(function(e) {
+    if (e.keyCode === 32) {
+      return regen();
+    }
+  });
+
+  regen = function() {
     var total1, total2;
 
     total1 = $('.sentence1 .item').length;
@@ -38,7 +48,7 @@
     $('.sentence1 .item, .sentence2 .item').removeClass('in');
     flip(15);
     return $('body').removeClass('prepared').addClass('start');
-  });
+  };
 
   flip = function(i) {
     return setTimeout((function() {
