@@ -29,6 +29,7 @@ tmp/restart.txt
 .sass-cache/**/*
 *.scssc
 psd/**/*
+.coffeescript-cache/**/*
 
 # for fireapp #
 ###############

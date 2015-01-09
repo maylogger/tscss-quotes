@@ -36,6 +36,6 @@ flip = (i) ->
 flip2 = (i) ->
   setTimeout (->
     $('.sentence2').find('.item').removeClass('in')
-    $('.sentence2').find('.item:eq(' + (window.rand1 - i) + ')').addClass('in')
+    $('.sentence2').find('.item:eq(' + (window.rand2 - i) + ')').addClass('in')
     flip2 i if --i
   ), 80

@@ -65,7 +65,7 @@
   flip2 = function(i) {
     return setTimeout((function() {
       $('.sentence2').find('.item').removeClass('in');
-      $('.sentence2').find('.item:eq(' + (window.rand1 - i) + ')').addClass('in');
+      $('.sentence2').find('.item:eq(' + (window.rand2 - i) + ')').addClass('in');
       if (--i) {
         return flip2(i);
       }
